@@ -4,11 +4,17 @@
 # Copyright (c) 2016 Jean-Marie Renouard
 # Everyone is permitted to copy and distribute verbatim copies
 # of this license document, but changing it is not allowed.
+package main;
 
+use 5.005;
+use strict;
+use warnings;
 use Cwd 'abs_path';
 use File::Basename;
 use Data::Dumper qw/Dumper/;
 
+my %opt={};
+$opt{'noinfo'}=0;
 my $outputfile = "./result.log";
 my $binDir="/usr/local/lib/postgres/bin";
 my $psql="$binDir/psql -Upostgres";
